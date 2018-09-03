@@ -1,2 +1,1 @@
-# CCSExampleApp1
-Example App1
+A minimal Express based application for testing the build pipe lines.
