@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/app1/public', express.static(path.join(__dirname, 'public')));
-app.use('/app1/', indexRouter);
+app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
