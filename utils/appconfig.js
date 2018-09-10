@@ -13,7 +13,7 @@
  *      APP protocol, 'http' or 'https'
  * 
  * Features swtiches can also be specified with the prefx CCS_FEATURE_
- * The value must be 'on', 'off', 'enabled', 'disabled', 'true' or 'false'.
+ * The value must be 'on', 'off', 'enabled', 'disabled', 'true' or 'false', 'yes' or 'no'.
  * 
  *      For example: CCS_FEATURE_EG1=on
  */
@@ -57,7 +57,7 @@ class AppConfig {
                 let featureName = evTest.substr( this.ENV_FEATURE_PREFIX.length );
                 let enabled = false;
                 let val = process.env[ev].toUpperCase().trim();
-                if ( (val === "TRUE") || (val === "YES") || (val === "ENABLED") ) {
+                if ( (val === "ON") || (val === "TRUE") || (val === "YES") || (val === "ENABLED") ) {
                     enabled = true;
                 }
                 this.featureInfo[featureName] = enabled;
