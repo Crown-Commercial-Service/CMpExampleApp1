@@ -5,9 +5,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
+var AppConfig = require('./utils/appconfig');
 var indexRouter = require('./routes/index');
 
 var app = express();
+
+// Make the application config availables 
+app.set("appConfig", new AppConfig() );
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

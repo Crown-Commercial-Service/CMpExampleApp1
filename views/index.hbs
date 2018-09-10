@@ -2,6 +2,12 @@
 <h2{{data.dateAndTime}}
 <p>Welcome to {{title}}</p>
 <br>
+<h3>Checking Features</h3>
+{{#if featureEG1}}
+    <p>Feature: <strong>EG1</strong> is <strong>ON</strong>.</p>
+{{else}}
+    <p>Feature: <strong>EG1</strong> is <strong>OFF</strong>.</p>
+{{/if}}
 <br>
 {{#if data.properties}}
     <h3>System Properties obtained from request to [api1.ccsdev-internal.org].</h3>
