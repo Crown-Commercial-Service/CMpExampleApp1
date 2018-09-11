@@ -9,14 +9,19 @@ COPY package*.json ./
 
 # install required Node modules
 # NOTE for production use use RUN npm install --only=production
-RUN npm install
+RUN npm install --only=production
 
 # Bundle app source
 COPY . .
 
+# Set various environment variables and setting for running node
+ENV NODE_ENV production
+USER node
+
 # Default ports for the apps is 8080
 EXPOSE 8080
 
-CMD [ "npm", "start" ]
+# Mpore efficient in a container to run directly rather than via npm start
+CMD [ "node", "./bin/www" ]
 
 
