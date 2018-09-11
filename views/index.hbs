@@ -1,6 +1,8 @@
 <h1>{{title}}</h1>
-<h2{{data.dateAndTime}}
 <p>Welcome to {{title}}</p>
+{{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+{{/if}}
 <br>
 <h3>Checking Features</h3>
 {{#if featureEG1}}
@@ -9,25 +11,43 @@
     <p>Feature: <strong>EG1</strong> is <strong>OFF</strong>.</p>
 {{/if}}
 <br>
-{{#if data.properties}}
-    <h3>System Properties obtained from request to [api1.ccsdev-internal.org].</h3>
+<h3>Environment Variables.</h3>
+<table border="2">
+    <tr><th>Property</th><th>Value</th></tr>
+    {{#each localEnv }}
+        <tr><td>{{@key}}</td><td>{{this}}</td></tr>
+    {{/each}}
+</table>
+<br>
+{{#if apiCallOK}}
+    {{#if apiResponse.properties}}
+        <h3>System Properties obtained from request to [api1.ccsdev-internal.org].</h3>
+        <table border="2">
+            <tr><th>Property</th><th>Value</th></tr>
+            {{#each apiResponse.properties }}
+                <tr><td>{{@key}}</td><td>{{this}}</td></tr>
+            {{/each}}
+        </table>
+        <br>
+        <br>
+    {{/if}}
+    {{#if apiResponse.environment}}
+        <h3>Environment Variables obtained from request to [api1.ccsdev-internal.org].</h3>
+        <table border="2">
+            <tr><th>Variable</th><th>Value</th></tr>
+            {{#each apiResponse.environment }}
+                <tr><td>{{@key}}</td><td>{{this}}</td></tr>
+            {{/each}}
+        </table>
+        <br>
+        <br>
+    {{/if}}
+    <h3>Java Runtime information from [api1.ccsdev-internal.org].</h3>
     <table border="2">
-        <tr><th>Property</th><th>Value</th></tr>
-        {{#each data.properties }}
-            <tr><td>{{@key}}</td><td>{{this}}</td></tr>
-        {{/each}}
+        <tr><th>Setting</th><th>Value</th></tr>
+        <tr><td>Available Processors</td><td>{{apiResponse.availableProcessors}}</td></tr>
+        <tr><td>Max Memory</td><td>{{apiResponse.maxMemory}}</td></tr>
+        <tr><td>Total Memory</td><td>{{apiResponse.totalMemory}}</td></tr>
+        <tr><td>Free Memory</td><td>{{apiResponse.freeMemory}}</td></tr>
     </table>
-    <br>
-    <br>
-{{/if}}
-{{#if data.environment}}
-    <h3>Environment Variables obtained from request to [api1.ccsdev-internal.org].</h3>
-    <table border="2">
-        <tr><th>Variable</th><th>Value</th></tr>
-        {{#each data.environment }}
-            <tr><td>{{@key}}</td><td>{{this}}</td></tr>
-        {{/each}}
-    </table>
-    <br>
-    <br>
 {{/if}}

@@ -11,24 +11,34 @@ router.get('/', function(req, res, next) {
   let appConfig = req.app.get( "appConfig" );
 
   // Get some data from the API if possible, we want it to be quick so only allow 100ms
-  request({url : appConfig.getApiURL(API_NAME) + API_REQUEST, timeout : 100}, function (error, response, body) {
+    request({url : appConfig.getApiURL(API_NAME) + API_REQUEST, timeout : 100}, function (error, response, body) {
     if ( (response) && (response.statusCode === 200) ) {
 
       try {
-        let jsonData = JSON.parse(body);
+        let apiResponse = JSON.parse(body);
         res.render('index', {   title: 'CCS Example App1',
-                                statusCode : response.statusCode,
+                                apiCallOK : true,
+                                localEnv : process.env,
                                 featureEG1 : appConfig.isFeatureEnabled("EG1"),
-                                data : jsonData });
+                                apiResponse : apiResponse });
       }
       catch ( e ) {
-        res.render('error', {   message: 'CCS Example App1 - Error parsing response from API.',
-                                error : { status : e.message, stack : e } });
+        res.render('index', {   title: 'CCS Example App1 - Error parsing response from API.',
+                                apiCallOK : false,
+                                localEnv : process.env,
+                                featureEG1 : appConfig.isFeatureEnabled("EG1"),
+                                apiResponse : null,
+                                errorMessage : e.message });
+
       }
     } else {
-      res.render('error', {   message: 'CCS Example App1 - Error calling API.',
-                              error : { status : response, stack : error } });
-    }
+      res.render('index', {   title: 'CCS Example App1 - Error calling API.',
+                              apiCallOK : false,
+                              localEnv : process.env,
+                              featureEG1 : appConfig.isFeatureEnabled("EG1"),
+                              apiResponse : null,
+                              errorMessage : JSON.stringify(error) });
+  }
   });
 });
 
