@@ -5,7 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
-var AppConfig = require('./utils/appconfig');
+var AppConfig = require('ccsexamplenpmmodule');
+
+
 var indexRouter = require('./routes/index');
 
 var app = express();
