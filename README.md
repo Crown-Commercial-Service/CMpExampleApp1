@@ -4,7 +4,7 @@ This is a small application example that uses nodeJS and the Express web server 
 
 The application will listen for requests on **port 8080**. Note that this is the port number the build pipe lines will use when defining the ECS tasks and load balancer rules. Changing the application to use a different port will result in incorrect deployment of the resulting container.
 
-In addition to Express is makes use of two other packages of note:
+In addition to Express it makes use of two other packages of note:
 
 `govuk-frontend` [https://github.com/alphagov/govuk-frontend](https://github.com/alphagov/govuk-frontend)
 
@@ -34,7 +34,7 @@ Then define the following environment variable:
 
 Running the application again and accessing `http://localhost:8080/` should now result in the Api call succeeding. It is important that the request to the api is made using the host name defined in the rules for the load balancer attached to the ECS Api cluster, the default being `api1.ccsdev-internal.org`.
 
-if you are building and running the example Api locally as a Java application change `192.168.99.100` to `127.0.0.1`.
+If you are building and running the example Api locally as a Java application change `192.168.99.100` to `127.0.0.1`.
 
 ## Build Pipeline ##
 The corresponding example build pipeline project is in the `CCSDevEnvironment` repository as `/terraform/build/app1`. The pipeline currently needs to be stored within the `CCSDevEnvironment` repository because it requires access to various Terraform modules.
