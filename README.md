@@ -1,6 +1,6 @@
 # Example Application Project #
 
-This is a small application example that uses nodeJS and the Express web server package to provision a simple web site that responds to root request `/` with a page containing information about its environment and also the result of request to the example Api project from the `CCSExampleApi1` repository.
+This is a small application example that uses nodeJS and the Express web server package to provision a simple web site that responds to a root request `/` with a page containing information about its environment and also the result of a request to the example Api project from the `CCSExampleApi1` repository.
 
 The application will listen for requests on **port 8080**. Note that this is the port number the build pipe lines will use when defining the ECS tasks and load balancer rules. Changing the application to use a different port will result in incorrect deployment of the resulting container.
 
