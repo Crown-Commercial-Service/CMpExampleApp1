@@ -1,5 +1,9 @@
 FROM node:8-alpine
 
+# Build information
+ARG GIT_COMMIT=unspecified
+LABEL git_commit=$GIT_COMMIT
+
 # Create app directory
 WORKDIR /usr/src/app
 
