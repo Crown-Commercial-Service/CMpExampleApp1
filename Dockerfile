@@ -21,6 +21,10 @@ ARG BUILD_TIME
 LABEL build_time=$BUILD_TIME
 ENV BUILD_TIME=$BUILD_TIME
 
+ARG VERSION
+LABEL version=$VERSION
+ENV VERSION=$VERSION
+
 # Create app directory
 WORKDIR /usr/src/app
 
