@@ -13,7 +13,8 @@
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
-    "node-sass-middleware": "0.11.0",
+    "node-sass-middleware": "~0.11.0",
+    "lodash": "~4.17.11",
     "govuk-frontend": "~2.0.0",
     "ccsexamplenpmmodule": "~0.0.2"
   }
