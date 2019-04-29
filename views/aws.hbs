@@ -1,0 +1,20 @@
+<h1>{{title}}</h1>
+<p>Welcome to the {{title}}</p>
+{{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+{{/if}}
+<br>
+<h3>S3 Access</h3>
+<p>Bucket Name : {{bucketName}}</p>
+<br>
+{{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+{{else}}
+    <h3>Objects in Bucket.</h3>
+    <table border="2">
+        <tr><th>Name</th><th>Size</th></tr>
+        {{#each s3Objects }}
+            <tr><td>{{this.Key}}</td><td>{{this.Size}}</td></tr>
+        {{/each}}
+    </table>
+{{/if}}

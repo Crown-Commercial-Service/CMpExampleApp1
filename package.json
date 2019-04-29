@@ -6,16 +6,17 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "aws-sdk": "^2.444.0",
+    "ccsexamplenpmmodule": "~0.0.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
-    "request": "~2.87.0",
+    "govuk-frontend": "~2.0.0",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
+    "lodash": "~4.17.11",
     "morgan": "~1.9.0",
     "node-sass-middleware": "~0.11.0",
-    "lodash": "~4.17.11",
-    "govuk-frontend": "~2.0.0",
-    "ccsexamplenpmmodule": "~0.0.2"
+    "request": "~2.87.0"
   }
 }
