@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+<p>Welcome to the {{title}}</p>
+{{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+{{/if}}
+<br>
+<h3>Redis Test</h3>
+<p>Redis Connection: {{redisHost}}:{{redisPort}}</p>
+<br>
+{{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+{{else}}
+    <p>Timestamp: {{timestamp}}</p>
+    <p>Counter: {{counter}}</p>
+{{/if}}
