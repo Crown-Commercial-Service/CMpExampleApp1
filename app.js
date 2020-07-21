@@ -10,6 +10,7 @@ var AppConfig = require('ccsexamplenpmmodule');
 
 var indexRouter = require('./routes/index');
 var awsRouter = require('./routes/aws');
+var envRouter = require('./routes/env');
 var redisRouter = require('./routes/redis');
 
 var app = express();
@@ -40,6 +41,7 @@ app.use('/assets', express.static(path.join(__dirname, 'node_modules/govuk-front
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/aws', awsRouter);
+app.use('/env', envRouter);
 app.use('/redis', redisRouter);
 
 // catch 404 and forward to error handler
