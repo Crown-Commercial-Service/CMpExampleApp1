@@ -14,7 +14,7 @@
     "govuk-frontend": "~2.0.0",
     "hbs": "^4.0.4",
     "http-errors": "~1.6.2",
-    "lodash": "~4.17.11",
+    "lodash": "~4.17.21",
     "morgan": "^1.9.1",
     "node-sass-middleware": "~0.11.0",
     "redis": "^2.8.0",
