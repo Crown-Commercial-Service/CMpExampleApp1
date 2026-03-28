@@ -10,13 +10,13 @@
     "ccsexamplenpmmodule": "0.0.6",
     "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
-    "express": "^4.16.4",
+    "express": "^4.22.0",
     "govuk-frontend": "~2.0.0",
     "hbs": "^4.0.4",
     "http-errors": "~1.6.2",
     "lodash": "~4.17.11",
     "morgan": "^1.9.1",
-    "node-sass-middleware": "~0.11.0",
+    "node-sass-middleware": "~1.1.0",
     "redis": "^2.8.0",
     "request": "~2.87.0"
   }
